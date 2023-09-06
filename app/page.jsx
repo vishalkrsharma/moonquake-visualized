@@ -15,27 +15,28 @@ import GlobalStyles from '@/styles/GlobalStyles';
 const Home = () => {
   return (
     <DataContextProvider>
-      <GlobalStyles />
-      <HomeContainer>
-        <Canvas
-          className='canvas'
-          camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}
-        >
-          <OrbitControls autoRotate={true} />
-          <Suspense>
-            <ambientLight intensity={2 / 100} />
-            <directionalLight
-              position={[0, 0, 100]}
-              intensity={50 / 100}
-              angle={-0.3}
-            />
-            <Environment />
-            <Moon />
-          </Suspense>
-        </Canvas>
-        <Navbar />
-        <Hero />
-      </HomeContainer>
+      <Suspense fallback={<></>}>
+        <GlobalStyles />
+        <HomeContainer>
+          <Canvas
+            className='canvas'
+            camera={{ fov: 35, zoom: 0.5, near: 1, far: 1000 }}
+          >
+            <OrbitControls autoRotate={true} />
+            <Suspense>
+              <ambientLight intensity={2 / 100} />
+              <directionalLight
+                position={[0, 0, 100]}
+                intensity={50 / 100}
+              />
+              <Environment />
+              <Moon />
+            </Suspense>
+          </Canvas>
+          <Navbar />
+          <Hero />
+        </HomeContainer>
+      </Suspense>
     </DataContextProvider>
   );
 };

@@ -39,7 +39,7 @@ const Space = () => {
           <ambientLight intensity={ambientLightIntensity / 100} />
           <spotLight
             position={[0, 0, 0]}
-            intensity={2}
+            intensity={500000}
             angle={Math.PI}
           />
           <directionalLight

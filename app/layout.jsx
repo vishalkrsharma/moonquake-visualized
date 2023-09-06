@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Moonquake Visualized Pro',
+  title: 'Moonquake Visualized',
   description: 'Visualized the quakes during the Apollo Missions.',
   icons: {
     icon: '/favicon.ico',
