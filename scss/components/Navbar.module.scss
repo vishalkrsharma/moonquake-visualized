@@ -1,0 +1,27 @@
+.navbarContainer {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2.5rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.brand {
+  &:hover {
+    text-decoration: underline;
+  }
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.link {
+  &:hover {
+    text-decoration: underline;
+  }
+  font-size: 1.5rem;
+  text-decoration: none;
+}

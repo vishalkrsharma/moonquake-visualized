@@ -1,0 +1,61 @@
+.menuContainer {
+  position: absolute;
+  top: 4.25rem;
+  left: 0rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.table {
+  &__slider {
+    tr {
+      .td__info {
+        padding: 10px;
+        .data {
+          margin-bottom: 10px;
+        }
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  padding: 0.25rem 1rem;
+}
+
+.blue {
+  color: #4468fa;
+}
+
+.orange {
+  color: #de5c00;
+}
+
+.green {
+  color: #43a30e;
+}
+
+.info {
+  width: 25rem;
+}
+
+.button {
+  padding: 0.4rem 0rem;
+  width: 5.4rem;
+  margin: 0.2rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.data {
+  span {
+    position: absolute;
+    right: 0;
+  }
+  position: relative;
+}

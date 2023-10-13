@@ -1,16 +1,15 @@
-import { StationType } from '@/data/QuakeData';
 import { useDataContext } from '@/hooks/useDataContext';
 import React from 'react';
-import styled from 'styled-components';
+import styles from '@/scss/components/QuakeInfo.module.scss';
 
 const QuakeInfo = () => {
   const { quake } = useDataContext();
 
   return (
     quake !== null && (
-      <QuakeInfoContainer>
-        <Header>Quake Details:</Header>
-        <Body>
+      <div className={styles.quakeInfoContainer}>
+        <div className={styles.header}>Quake Details:</div>
+        <div className={styles.body}>
           Year: {quake.year}
           <br />
           Day: {quake.day}
@@ -31,30 +30,10 @@ const QuakeInfo = () => {
             : quake.station.map((st, idx) => {
                 return st.value + ' ';
               })}
-        </Body>
-      </QuakeInfoContainer>
+        </div>
+      </div>
     )
   );
 };
 
 export default QuakeInfo;
-
-const QuakeInfoContainer = styled.div`
-  color: #ffffff;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0.5rem;
-  border: 1px solid #ffffff;
-  padding: 1rem;
-  font-size: 1.25rem;
-`;
-
-const Header = styled.div`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-`;
-
-const Body = styled.div`
-  margin-left: 1rem;
-`;

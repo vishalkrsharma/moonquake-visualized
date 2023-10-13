@@ -1,0 +1,36 @@
+.developersContainer {
+  margin: 0 25rem;
+}
+
+.header {
+  font-size: 3rem;
+  margin: 2.75rem 0;
+  text-align: center;
+}
+
+.list {
+  &__item {
+    &__img {
+      border-radius: 50%;
+    }
+    &__name {
+      font-size: 2rem;
+      width: 23rem;
+    }
+    &__link {
+      width: 4rem;
+      height: 4rem;
+      font-size: 4rem;
+    }
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
