@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styles from '@/scss/components/Legend.module.scss';
-import legend from '@/assets/legend.png';
 import Image from 'next/image';
 
 const Legend = () => {
@@ -13,7 +12,7 @@ const Legend = () => {
         width='40'
         height='250'
         className={styles.image}
-        src={legend.src}
+        src='/assets/legend.png'
         alt='Legend Image'
       />
     </div>

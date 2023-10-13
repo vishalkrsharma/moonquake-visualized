@@ -14,7 +14,7 @@ const Developers = () => {
             <Image
               className={styles.list__item__img}
               src='/assets/arkadeep.jpeg'
-              alt=''
+              alt='img_arkadeep'
               width={70}
               height={70}
             />
@@ -40,7 +40,7 @@ const Developers = () => {
             <Image
               className={styles.list__item__img}
               src='/assets/maaz.jpeg'
-              alt=''
+              alt='img_maaz'
               width={70}
               height={70}
             />
@@ -68,7 +68,7 @@ const Developers = () => {
             <Image
               className={styles.list__item__img}
               src='/assets/soham.jpg'
-              alt=''
+              alt='img_soham'
               width={70}
               height={70}
             />
@@ -94,7 +94,7 @@ const Developers = () => {
             <Image
               className={styles.list__item__img}
               src='/assets/vishal.jpg'
-              alt=''
+              alt='img_vishal'
               width={70}
               height={70}
             />
