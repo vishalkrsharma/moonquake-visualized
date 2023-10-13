@@ -1,3 +1,5 @@
+import '@/scss/global.scss';
+
 export const metadata = {
   title: 'Moonquake Visualized',
   description: 'Visualized the quakes during the Apollo Missions.',

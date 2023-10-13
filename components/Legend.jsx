@@ -1,54 +1,23 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+
+import styles from '@/scss/components/Legend.module.scss';
 import legend from '@/assets/legend.png';
+import Image from 'next/image';
 
 const Legend = () => {
   return (
-    <LegendContainer>
-      <Top>+1000m</Top>
-      <Bottom>-1000m</Bottom>
+    <div className={styles.legendContainer}>
+      <div className={styles.top}>+1000m</div>
+      <div className={styles.bottom}>-1000m</div>
       <Image
+        width='40'
+        height='250'
+        className={styles.image}
         src={legend.src}
         alt='Legend Image'
       />
-    </LegendContainer>
+    </div>
   );
 };
 
 export default Legend;
-
-const LegendContainer = styled.div`
-  height: 25rem;
-  width: 10rem;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.25rem;
-  color: #ffffff;
-`;
-
-const Title = styled.div`
-  margin: 0.5rem;
-`;
-
-const Image = styled.img`
-  height: 25rem;
-  position: absolute;
-  right: 0.5rem;
-  margin: 0.25rem;
-  filter: brightness(0.8);
-`;
-
-const Top = styled.div`
-  position: absolute;
-  top: -0.5rem;
-  left: 0;
-`;
-
-const Bottom = styled.div`
-  bottom: -1rem;
-  left: 0;
-  position: absolute;
-`;

@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import Environment from './Environment';
-import Moon from './Moon.jsx';
-import Wireframe from './Wireframe';
-import styled from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+
+import { useDataContext } from '@/hooks/useDataContext';
+import Environment from './Environment';
+import Moon from './Moon';
+import Wireframe from './Wireframe';
 import AxesHelper from './AxesHelper';
 import Sun from './Sun.jsx';
 import { Model as Lander } from './Lander';
@@ -14,7 +15,7 @@ import Menu from './Menu';
 import QuakeInfo from './QuakeInfo';
 import Legend from './Legend';
 import Places from './Places';
-import { useDataContext } from '@/hooks/useDataContext';
+import styles from '@/scss/components/Space.module.scss';
 
 const Space = () => {
   const { places, placesLocation, camera, ambientLightIntensity, directionalLightIntensity, landerLocation, apolloLanders, quake, heightMap } =
@@ -22,8 +23,13 @@ const Space = () => {
 
   return (
     <>
-      <Back href='/'>&lt;Back to Home</Back>
-      <SpaceContainer>
+      <Link
+        className={styles.back}
+        href='/'
+      >
+        &lt;Back to Home
+      </Link>
+      <div className={styles.spaceContainer}>
         <Canvas>
           <PerspectiveCamera
             makeDefault
@@ -75,7 +81,7 @@ const Space = () => {
             })}
         </Canvas>
         <Menu />
-      </SpaceContainer>
+      </div>
       <QuakeInfo />
       {heightMap && <Legend />}
     </>
@@ -83,27 +89,3 @@ const Space = () => {
 };
 
 export default Space;
-
-const SpaceContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  font-size: 1.25rem;
-  background-color: #000000;
-`;
-
-const Back = styled(Link)`
-  &:hover {
-    text-decoration: underline;
-  }
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  margin: 0.5rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  font-size: 1.25rem;
-  z-index: 1;
-`;

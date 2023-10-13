@@ -1,15 +1,14 @@
 'use client';
 
-import GlobalStyles from '@/styles/GlobalStyles';
-import HomePage from '@/pages/HomePage';
+import Space from '@/components/Space';
+import { DataContextProvider } from '@/contexts/DataContext';
 
-const Page = () => {
+const SimulationPage = () => {
   return (
-    <div>
-      <GlobalStyles />
-      <HomePage />
-    </div>
+    <DataContextProvider>
+      <Space />
+    </DataContextProvider>
   );
 };
 
-export default Page;
+export default SimulationPage;

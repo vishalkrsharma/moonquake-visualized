@@ -1,7 +1,6 @@
-import { FC } from 'react';
-import styled from 'styled-components';
 import Timeline from './Timeline';
 import { useDataContext } from '@/hooks/useDataContext';
+import styles from '@/scss/components/Menu.module.scss';
 
 const Menu = () => {
   const {
@@ -22,87 +21,92 @@ const Menu = () => {
   } = useDataContext();
 
   return (
-    <MenuContainer>
-      <Table className='table__1'>
+    <div className={styles.menuContainer}>
+      <table className={styles.table}>
         <tbody>
           <tr>
-            <Info>
+            <td className={styles.info}>
               World Axes
               <br />
-              &emsp;x-axis : <Orange>orange</Orange>
+              &emsp;x-axis : <span className={styles.orange}>orange</span>
               <br />
-              &emsp;y-axis : <Green>green</Green>
+              &emsp;y-axis : <span className={styles.green}>green</span>
               <br />
-              &emsp;z-axis : <Blue>blue</Blue>
-            </Info>
+              &emsp;z-axis : <span className={styles.blue}>blue</span>
+            </td>
             <td>
-              <Button
+              <button
+                className={styles.button}
                 onClick={() => {
                   setAxes(axes === 0 ? 10 : 0);
                 }}
               >
                 {axes === 0 ? 'Off' : 'On'}
-              </Button>
+              </button>
             </td>
           </tr>
           <tr>
-            <Info>Latitude & Longitude</Info>
+            <td className={styles.info}>Latitude & Longitude</td>
             <td>
-              <Button
+              <button
+                className={styles.button}
                 onClick={() => {
                   setWireframe(!wireframe);
                 }}
               >
                 {wireframe === true ? 'On' : 'Off'}
-              </Button>
+              </button>
             </td>
           </tr>
           <tr>
-            <Info>Height Map</Info>
+            <td className={styles.info}>Height Map</td>
             <td>
-              <Button
+              <button
+                className={styles.button}
                 onClick={() => {
                   setHeightMap(!heightMap);
                 }}
               >
                 {heightMap === true ? 'On' : 'Off'}
-              </Button>
+              </button>
             </td>
           </tr>
           <tr>
-            <Info>Apollo Landers</Info>
+            <td className={styles.info}>Apollo Landers</td>
             <td>
-              <Button
+              <button
+                className={styles.button}
                 onClick={() => {
                   setApolloLanders(!apolloLanders);
                 }}
               >
                 {apolloLanders === true ? 'On' : 'Off'}
-              </Button>
+              </button>
             </td>
           </tr>
           <tr>
-            <Info>Seas & Oceans</Info>
+            <td className={styles.info}>Seas & Oceans</td>
             <td>
-              <Button
+              <button
+                className={styles.button}
                 onClick={() => {
                   setPlaces(!places);
                 }}
               >
                 {places === true ? 'On' : 'Off'}
-              </Button>
+              </button>
             </td>
           </tr>
         </tbody>
-      </Table>
-      <Table className='table__2'>
+      </table>
+      <table className={styles.table__slider}>
         <tbody>
           <tr>
-            <Info>
-              <Data>
+            <td className={styles.info}>
+              <div className={styles.data}>
                 Directional Light Intensity
                 <span>{directionalLightIntensity}</span>
-              </Data>
+              </div>
               <input
                 type='range'
                 min={0}
@@ -112,23 +116,24 @@ const Menu = () => {
                   setDirectionalLightIntensity(event.target.value);
                 }}
               />
-            </Info>
+            </td>
             <td>
-              <Button
+              <button
+                className={styles.button}
                 onClick={() => {
                   setDirectionalLightIntensity(50);
                 }}
               >
                 Reset
-              </Button>
+              </button>
             </td>
           </tr>
           <tr>
-            <Info>
-              <Data>
+            <td className={styles.info}>
+              <div className={styles.data}>
                 Ambient Light Intensity &emsp;
                 <span>{ambientLightIntensity}</span>
-              </Data>
+              </div>
               <input
                 type='range'
                 min={1}
@@ -138,89 +143,23 @@ const Menu = () => {
                   setAmbientLightIntensity(event.target.value);
                 }}
               />
-            </Info>
+            </td>
             <td>
-              <Button
+              <button
+                className={styles.button}
                 onClick={() => {
                   setAmbientLightIntensity(3);
                 }}
               >
                 Reset
-              </Button>
+              </button>
             </td>
           </tr>
         </tbody>
-      </Table>
+      </table>
       <Timeline />
-    </MenuContainer>
+    </div>
   );
 };
 
 export default Menu;
-
-const MenuContainer = styled.div`
-  position: absolute;
-  top: 4.25rem;
-  left: 0rem;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 0.5rem;
-  font-size: 1.25rem;
-`;
-
-const Table = styled.table`
-  .table {
-    &__1 {
-    }
-    &__2 {
-      tr {
-        .td__info {
-          padding: 10px;
-          .data {
-            margin-bottom: 10px;
-          }
-          input {
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    padding: 0.25rem 1rem;
-    border-collapse: collapse;
-  }
-`;
-
-const Blue = styled.span`
-  color: #4468fa;
-`;
-
-const Orange = styled.span`
-  color: #de5c00;
-`;
-
-const Green = styled.span`
-  color: #43a30e;
-`;
-
-const Info = styled.td`
-  width: 25rem;
-`;
-
-const Button = styled.button`
-  padding: 0.4rem 0rem;
-  width: 5.4rem;
-  margin: 0.2rem;
-  border: none;
-  border-radius: 0.5rem;
-`;
-
-const Data = styled.div`
-  span {
-    position: absolute;
-    right: 0;
-  }
-  position: relative;
-`;
