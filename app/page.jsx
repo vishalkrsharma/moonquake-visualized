@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
@@ -10,6 +9,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import { DataContextProvider } from '@/contexts/DataContext';
 import styles from '@/scss/pages/HomePage.module.scss';
+
 const HomePage = () => {
   return (
     <DataContextProvider>

@@ -10,6 +10,7 @@ const Environment = () => {
       factor={7}
       saturation={0}
       fade={true}
+      data-testid='stars'
     />
   );
 };
