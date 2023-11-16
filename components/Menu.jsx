@@ -1,4 +1,3 @@
-import Timeline from './Timeline';
 import { useDataContext } from '@/hooks/useDataContext';
 import styles from '@/scss/components/Menu.module.scss';
 
@@ -26,7 +25,7 @@ const Menu = () => {
         <tbody>
           <tr>
             <td className={styles.info}>
-              World Axes
+              <span>World Axes</span>
               <br />
               &emsp;x-axis : <span className={styles.orange}>orange</span>
               <br />
@@ -40,6 +39,7 @@ const Menu = () => {
                 onClick={() => {
                   setAxes(axes === 0 ? 10 : 0);
                 }}
+                data-testid='axes-button'
               >
                 {axes === 0 ? 'Off' : 'On'}
               </button>
@@ -115,6 +115,7 @@ const Menu = () => {
                 onChange={(event) => {
                   setDirectionalLightIntensity(event.target.value);
                 }}
+                data-testid='slider'
               />
             </td>
             <td>
@@ -142,6 +143,7 @@ const Menu = () => {
                 onChange={(event) => {
                   setAmbientLightIntensity(event.target.value);
                 }}
+                data-testid='slider'
               />
             </td>
             <td>
@@ -157,7 +159,6 @@ const Menu = () => {
           </tr>
         </tbody>
       </table>
-      <Timeline />
     </div>
   );
 };

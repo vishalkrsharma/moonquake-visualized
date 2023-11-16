@@ -6,7 +6,7 @@ Apollo missions were conducted from 1968-72, but till now the seismic data retri
 
 ## LINK TO FINAL PROJECT
 
-https://nasa-spaceapps-moonquake.herokuapp.com/
+https://moonquake-visualized.vercel.app/
 
 ## DETAILED PROJECT DESCRIPTION
 

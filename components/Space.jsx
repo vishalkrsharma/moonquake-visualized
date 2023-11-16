@@ -16,6 +16,7 @@ import QuakeInfo from './QuakeInfo';
 import Legend from './Legend';
 import Places from './Places';
 import styles from '@/scss/components/Space.module.scss';
+import Timeline from './Timeline';
 
 const Space = () => {
   const { places, placesLocation, camera, ambientLightIntensity, directionalLightIntensity, landerLocation, apolloLanders, quake, heightMap } =
@@ -81,6 +82,7 @@ const Space = () => {
             })}
         </Canvas>
         <Menu />
+        <Timeline />
       </div>
       <QuakeInfo />
       {heightMap && <Legend />}

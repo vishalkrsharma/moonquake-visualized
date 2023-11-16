@@ -1,23 +1,20 @@
 .timelineContainer {
   position: absolute;
-  top: 33rem;
-  left: 0;
+  top: 39rem;
+  left: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   font-size: 1.25rem;
-  @-moz-document url-prefix() {
-    top: 33.5rem;
-  }
 }
 
 .select {
   flex-grow: 100;
-  background: #000000;
+  background: #000;
   color: #fff;
   height: 3.6rem;
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   outline: none;
   font-size: 1rem;
   padding: 0 1rem;
