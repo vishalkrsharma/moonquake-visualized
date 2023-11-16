@@ -1,6 +1,8 @@
-import { createContext, useState, useContext } from 'react';
+'use client';
 
-export const DataContext = createContext(undefined);
+import { createContext, useState } from 'react';
+
+export const DataContext = createContext(null);
 
 export const DataContextProvider = ({ children }) => {
   const [axes, setAxes] = useState(0);

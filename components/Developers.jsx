@@ -7,7 +7,7 @@ import styles from '@/scss/components/Developers.module.scss';
 const Developers = () => {
   return (
     <div className={styles.developersContainer}>
-      <div className={styles.header}>Our Team:</div>
+      <h1 className={styles.header}>Our Team</h1>
       <ul className={styles.list}>
         <div>
           <li className={styles.list__item}>
@@ -18,7 +18,12 @@ const Developers = () => {
               width={70}
               height={70}
             />
-            <div className={styles.list__item__name}>Arkadeep Mitra</div>
+            <div
+              className={styles.list__item__name}
+              data-testid='dev-name'
+            >
+              Arkadeep Mitra
+            </div>
             <a
               className={styles.list__item__link}
               target='_blank'
@@ -44,7 +49,12 @@ const Developers = () => {
               width={70}
               height={70}
             />
-            <div className={styles.list__item__name}>Maaz Shahid</div>
+            <div
+              className={styles.list__item__name}
+              data-testid='dev-name'
+            >
+              Maaz Shahid
+            </div>
             <a
               className={styles.list__item__link}
               target='_blank'
@@ -72,7 +82,12 @@ const Developers = () => {
               width={70}
               height={70}
             />
-            <div className={styles.list__item__name}>Soham Deb Majumdar</div>
+            <div
+              className={styles.list__item__name}
+              data-testid='dev-name'
+            >
+              Soham Deb Majumdar
+            </div>
             <a
               className={styles.list__item__link}
               target='_blank'
@@ -98,7 +113,12 @@ const Developers = () => {
               width={70}
               height={70}
             />
-            <div className={styles.list__item__name}>Vishal Kumar Sharma</div>
+            <div
+              className={styles.list__item__name}
+              data-testid='dev-name'
+            >
+              Vishal Kumar Sharma
+            </div>
             <a
               className={styles.list__item__link}
               target='_blank'

@@ -7,8 +7,8 @@ const Hero = () => {
   return (
     <div className={styles.heroContainer}>
       <div className={styles.title}>
-        <div className={styles.title__primary}>MOONQUAKE VISUALIZED</div>
-        <div className={styles.title__secondary}>VISUALIZING THE MOON SINCE 1969</div>
+        <h1 className={styles.title__primary}>MOONQUAKE VISUALIZED</h1>
+        <h2 className={styles.title__secondary}>VISUALIZING THE MOON SINCE 1969</h2>
       </div>
       <div className={styles.links}>
         <Link
