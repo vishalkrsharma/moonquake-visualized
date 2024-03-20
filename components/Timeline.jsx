@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
 import styles from '@/scss/components/Timeline.module.scss';
-import QuakeData from '@/data/QuakeData';
+// import QuakeData from '@/data/QuakeData';
 import { useDataContext } from '@/hooks/useDataContext';
 
-const Timeline = () => {
+const Timeline = ({ QuakeData }) => {
   const { quake, setQuake, setCamera } = useDataContext();
   const [year, setYear] = useState(null);
   const degToRad = (deg) => (deg * Math.PI) / 180.0;
 
-  const years = Array.from(new Set(QuakeData.map((items) => items.year)));
+  const years = Array.from(new Set(QuakeData?.map((items) => items.year)));
 
   return (
     <>
@@ -38,7 +38,7 @@ const Timeline = () => {
           onChange={(event) => setQuake(QuakeData.filter((items) => items._id === event.target.value)[0])}
         >
           <option value=''>&#60;Day&#62;</option>
-          {QuakeData.filter((items) => items.year === year).map((item, index) => {
+          {QuakeData?.filter((items) => items.year === year).map((item, index) => {
             return (
               <option
                 className='timeline__label__list'
