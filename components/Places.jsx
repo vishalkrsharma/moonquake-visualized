@@ -40,4 +40,4 @@ export default function Lander(props) {
   );
 }
 
-useGLTF.preload('/lander.glb');
+useGLTF.preload('/assets/lander.glb');

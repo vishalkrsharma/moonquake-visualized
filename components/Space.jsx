@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
@@ -19,8 +19,17 @@ import styles from '@/scss/components/Space.module.scss';
 import Timeline from './Timeline';
 
 const Space = () => {
+  const [QuakeData, setQuakeData] = useState();
   const { places, placesLocation, camera, ambientLightIntensity, directionalLightIntensity, landerLocation, apolloLanders, quake, heightMap } =
     useDataContext();
+
+  useEffect(() => {
+    (async function () {
+      const res = await fetch('https://dcs1igsxc5.execute-api.ap-south-1.amazonaws.com/dev/api/quake-data');
+      const data = await res.json();
+      setQuakeData(data);
+    })();
+  }, []);
 
   return (
     <>
@@ -70,19 +79,17 @@ const Space = () => {
             ))}
           {quake !== null && <Wave quake={quake} />}
           {places &&
-            placesLocation.map((place, index) => {
-              return (
-                <Places
-                  key={index}
-                  lat={place[0]}
-                  long={place[1]}
-                  name={place[2]}
-                />
-              );
-            })}
+            placesLocation.map((place, index) => (
+              <Places
+                key={index}
+                lat={place[0]}
+                long={place[1]}
+                name={place[2]}
+              />
+            ))}
         </Canvas>
         <Menu />
-        <Timeline />
+        <Timeline QuakeData={QuakeData} />
       </div>
       <QuakeInfo />
       {heightMap && <Legend />}
