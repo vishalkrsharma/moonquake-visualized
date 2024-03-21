@@ -25,7 +25,7 @@ const Space = () => {
 
   useEffect(() => {
     (async function () {
-      const res = await fetch('https://f6x31rfy26.execute-api.ap-south-1.amazonaws.com/dev/api/getData');
+      const res = await fetch('https://dcs1igsxc5.execute-api.ap-south-1.amazonaws.com/dev/api/quake-data');
       const data = await res.json();
       setQuakeData(data);
     })();
@@ -79,16 +79,14 @@ const Space = () => {
             ))}
           {quake !== null && <Wave quake={quake} />}
           {places &&
-            placesLocation.map((place, index) => {
-              return (
-                <Places
-                  key={index}
-                  lat={place[0]}
-                  long={place[1]}
-                  name={place[2]}
-                />
-              );
-            })}
+            placesLocation.map((place, index) => (
+              <Places
+                key={index}
+                lat={place[0]}
+                long={place[1]}
+                name={place[2]}
+              />
+            ))}
         </Canvas>
         <Menu />
         <Timeline QuakeData={QuakeData} />
