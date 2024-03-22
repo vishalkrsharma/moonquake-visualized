@@ -35,7 +35,7 @@ const Timeline = ({ QuakeData }) => {
         </select>
         <select
           className={styles.select}
-          onChange={(event) => setQuake(QuakeData.filter((items) => items._id === event.target.value)[0])}
+          onChange={(event) => setQuake(QuakeData.filter((items) => items.id === event.target.value)[0])}
         >
           <option value=''>&#60;Day&#62;</option>
           {QuakeData?.filter((items) => items.year === year).map((item, index) => {
@@ -43,7 +43,7 @@ const Timeline = ({ QuakeData }) => {
               <option
                 className='timeline__label__list'
                 key={index}
-                value={item._id}
+                value={item.id}
               >
                 {item.day}
               </option>
