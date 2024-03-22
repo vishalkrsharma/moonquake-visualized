@@ -17,7 +17,7 @@ const Page = () => {
         in reality. The Moon, our Earth&apos;s true companion has it&apos;s own secrets. Hiding in it&apos;s belly the moonquakes which makes it ring like a
         bell. Alas! We thought there is no sound on the moon. Let&apos;s explore this fascinating place on our app &apos;Moonquake Visualized&apos;.
       </div>
-      <Developers />
+      {/* <Developers /> */}
     </div>
   );
 };
