@@ -10,7 +10,7 @@ const Navbar = () => {
         className={styles.brand}
         href='/'
       >
-        MOON
+        Home
       </Link>
       <Link
         className={styles.link}
