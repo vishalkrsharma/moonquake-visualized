@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
 import styles from '@/scss/components/Timeline.module.scss';
-// import QuakeData from '@/data/QuakeData';
+import QuakeData from '@/data/QuakeData';
 import { useDataContext } from '@/hooks/useDataContext';
 
-const Timeline = ({ QuakeData }) => {
+// const Timeline = ({ QuakeData }) => {
+const Timeline = () => {
   const { quake, setQuake, setCamera } = useDataContext();
   const [year, setYear] = useState(null);
   const degToRad = (deg) => (deg * Math.PI) / 180.0;
@@ -21,7 +22,12 @@ const Timeline = ({ QuakeData }) => {
             setYear(event.target.value);
           }}
         >
-          <option value={null}>&#60;Year&#62;</option>
+          <option
+            value={null}
+            hidden
+          >
+            &#60;Year&#62;
+          </option>
           {years.map((year, index) => {
             return (
               <option
@@ -35,9 +41,15 @@ const Timeline = ({ QuakeData }) => {
         </select>
         <select
           className={styles.select}
-          onChange={(event) => setQuake(QuakeData.filter((items) => items.id === event.target.value)[0])}
+          disabled={year === null}
+          onChange={(event) => setQuake(QuakeData.find((items) => items.day === event.target.value))}
         >
-          <option value=''>&#60;Day&#62;</option>
+          <option
+            value=''
+            hidden
+          >
+            &#60;Day&#62;
+          </option>
           {QuakeData?.filter((items) => items.year === year).map((item, index) => {
             return (
               <option
