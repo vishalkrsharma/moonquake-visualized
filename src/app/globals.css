@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-victor-mono: var(--font-victor-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+table,
+tr,
+th,
+td {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #fff;
+  border-collapse: collapse;
+}
+
+.menu-button {
+  @apply w-20 py-1 m-0.5  rounded-lg border-0 bg-white text-black font-bold hover:bg-white/90 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.apply-button {
+  @apply w-20 py-2.5 m-0.5 rounded-lg border-0 bg-white text-black font-bold hover:bg-white/90 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed;
+}
